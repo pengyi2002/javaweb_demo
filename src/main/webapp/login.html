@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理系统</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1"
+                    data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">图书管理系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">登录</a></li>
+                <li><a href="#">注册</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h2 class="text-center">欢迎使用图书管理系统</h2>
+            <form>
+                <div class="form-group">
+                    <label for="inputUsername">用户名</label>
+                    <input class="form-control" id="inputUsername" placeholder="请输入用户名" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">密码</label>
+                    <input class="form-control" id="inputPassword" placeholder="请输入密码" type="password">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> 记住我
+                    </label>
+                </div>
+                <button class="btn btn-primary btn-block" type="submit">登录</button>
+            </form>
+            <hr>
+            <p class="text-center">还没有账号？<a href="#">点击注册</a></p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

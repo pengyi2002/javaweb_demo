@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>借还书 - 图书管理系统</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1"
+                    data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">图书管理系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">借还书</a></li>
+                <li><a href="#">退出登录</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">借书</h2>
+            <hr>
+            <form>
+                <div class="form-group">
+                    <label for="borrowBookId">图书编号</label>
+                    <input class="form-control" id="borrowBookId" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="borrowUserId">借阅人ID</label>
+                    <input class="form-control" id="borrowUserId" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="borrowDate">借阅日期</label>
+                    <input class="form-control" id="borrowDate" type="date" value="<?php echo date('Y-m-d'); ?>">
+                </div>
+                <button class="btn btn-primary center-block" type="submit">借书</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h2 class="text-center">还书</h2>
+            <hr>
+            <form>
+                <div class="form-group">
+                    <label for="returnBookId">图书编号</label>
+                    <input class="form-control" id="returnBookId" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="returnUserId">借阅人ID</label>
+                    <input class="form-control" id="returnUserId" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="returnDate">归还日期</label>
+                    <input class="form-control" id="returnDate" type="date" value="<?php echo date('Y-m-d'); ?>">
+                </div>
+                <button class="btn btn-primary center-block" type="submit">还书</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

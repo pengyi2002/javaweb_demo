@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理 - 图书管理系统</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1"
+                    data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">图书管理系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">用户管理</a></li>
+                <li><a href="#">退出登录</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">用户管理</h2>
+            <hr>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>用户名</th>
+                    <th>邮箱</th>
+                    <th>角色</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>user1</td>
+                    <td>user1@example.com</td>
+                    <td>管理员</td>
+                    <td class="text-center">
+                        <button class="btn btn-primary btn-xs" data-target="#editModal" data-toggle="modal">编辑</button>
+                        <button class="btn btn-danger btn-xs">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>user2</td>
+                    <td>user2@example.com</td>
+                    <td>普通用户</td>
+                    <td class="text-center">
+                        <button class="btn btn-primary btn-xs" data-target="#editModal" data-toggle="modal">编辑</button>
+                        <button class="btn btn-danger btn-xs">删除</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- 编辑用户模态框 -->
+<div aria-labelledby="editModalLabel" class="modal fade" id="editModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="editModalLabel">编辑用户</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="editUsername">用户名</label>
+                        <input class="form-control" id="editUsername" type="text" value="user1">
+                    </div>
+                    <div class="form-group">
+                        <label for="editEmail">邮箱</label>
+                        <input class="form-control" id="editEmail" type="email" value="user1@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="editRole">角色</label>
+                        <select class="form-control" id="editRole">
+                            <option>管理员</option>
+                            <option>普通用户</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" type="button">关闭</button>
+                    <button class="btn btn-primary" type="submit">保存修改</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        // 当单击表格中的 编辑 时候
+        $('.table .btn-primary').on('click', function () {
+            // 得到当前行
+            var currentRow = $(this).closest("tr");
+            var col1 = currentRow.find("td:eq(0)").text(); // 获取当前行的第 1 列
+            // 根据ID获取对应的用户信息并填充到编辑模态框中
+            $('#editUsername').val(currentRow.find("td:eq(1)").text());
+            $('#editEmail').val(currentRow.find("td:eq(2)").text());
+            $('#editRole').val(currentRow.find("td:eq(3)").text());
+        });
+        // 当单击表格中的 删除 时候
+        $('.table .btn-danger').on('click', function () {
+            // 得到当前行
+            var currentRow = $(this).closest("tr");
+            var col1 = currentRow.find("td:eq(0)").text(); // 获取当前行的第 1 列
+            // 进行删除操作...
+        });
+    });
+</script>
+
+</body>
+
+</html>
